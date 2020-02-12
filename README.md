@@ -1,4 +1,4 @@
-# sgvheadlines
+# SGV Tribunes Daily Headlines Scraper
 
 Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Apache
 
