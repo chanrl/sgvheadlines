@@ -4,7 +4,7 @@ Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Apach
 
 [Link](https://sgvheadlines.westus.cloudapp.azure.com:8080/)
 
-Hosted on Azure VM using cron to schedule a daily scraping of news headlines from my local newspaper (SGV Tribune)
+Hosted on Azure VM using cron for automated daily scraping of news headlines from my local newspaper (SGV Tribune)
 
 Data stored on sqlite db
 
