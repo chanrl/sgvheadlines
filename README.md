@@ -1,11 +1,13 @@
 # sgvheadlines
 
-Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Nginx
+Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Apache
 
-Hosted on Azure VM using cron to schedule a daily scraping of news headlines from my local newspaper (sgv tribune)
+[Link](https://sgvheadlines.westus.cloudapp.azure.com:8080/)
 
-Data will be stored on sqlite db
+Hosted on Azure VM using cron to schedule a daily scraping of news headlines from my local newspaper (SGV Tribune)
 
-Dash + plotly to create a dashboard for NLP
+Data stored on sqlite db
 
-LDA and other nlp tools will be used
+Dash to create a dashboard
+
+Gensim's LDA for topic modeling
