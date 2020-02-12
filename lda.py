@@ -1,0 +1,54 @@
+from gensim.models import LdaModel
+from gensim.corpora import Dictionary
+from main import *
+
+def preprocess_corpus(corpus):
+    texts = []
+    for row in corpus:
+        texts.append(row.split(" "))
+    return texts
+
+
+common_dictionary = Dictionary(common_texts)
+common_corpus = [common_dictionary.doc2bow(text) for text in common_texts]
+model = LdaModel(common_corpus, num_topics=5, id2word=common_dictionary)
+
+import spacy  # for our NLP processing
+import nltk  # to use the stopwords library
+import string  # for a list of all punctuation
+from nltk.corpus import stopwords  # for a list of stopwords
+import gensim
+from sklearn.manifold import TSNE
+import pandas as pd
+import numpy as np
+
+# # Now we can load and use spacy to analyse our complaint
+nlp = spacy.load("en_core_web_sm")
+
+
+def format_topics_sentences(ldamodel, corpus, texts):
+    sent_topics_df = pd.DataFrame()
+
+    # Get main topic in each document
+    for i, row in enumerate(ldamodel[corpus]):
+        row = sorted(row, key=lambda x: (x[1]), reverse=True)
+        # Get the Dominant topic, Perc Contribution and Keywords for each document
+        for j, (topic_num, prop_topic) in enumerate(row):
+            if j == 0:  # => dominant topic
+                wp = ldamodel.show_topic(topic_num)
+                topic_keywords = ", ".join([word for word, prop in wp])
+                sent_topics_df = sent_topics_df.append(
+                    pd.Series([int(topic_num), round(prop_topic, 4), topic_keywords]),
+                    ignore_index=True,
+                )
+            else:
+                break
+    sent_topics_df.columns = ["Dominant_Topic", "Perc_Contribution", "Topic_Keywords"]
+
+    # Add original text to the end of the output
+    contents = pd.Series(texts)
+
+    sent_topics_df = pd.concat([sent_topics_df, contents], axis=1)
+    return sent_topics_df
+
+format_topics_sentences(model, common_corpus, common_dictionary)

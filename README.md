@@ -1,6 +1,6 @@
 # sgvheadlines
 
-Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Apache
+Demo web app using the following tech stack: Dash, Azure VM, sqlite3, LDA, Nginx
 
 Hosted on Azure VM using cron to schedule a daily scraping of news headlines from my local newspaper (sgv tribune)
 
