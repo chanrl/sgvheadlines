@@ -10,4 +10,4 @@ Demo Flask web app served with the following: Azure VM, sqlite3, Apache
 * Dash framework to create the dashboard and data tables
 * Wordcloud module for generating wordcloud visualizations
 * Gensim's LDA for topic modeling
-* SSL certificate obtained from Let's Encrypt and served with Apache
+* SSL certificate obtained from Let's Encrypt and served with Gunicorn
