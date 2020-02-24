@@ -1,6 +1,6 @@
 # SGV Tribunes Daily Headlines Scraper
 
-Demo Flask web app served with the following: Azure VM, sqlite3, Apache
+Demo Flask web app served with the following: Azure VM, sqlite3, Gunicorn
 
 [Link](https://sgvheadlines.westus.cloudapp.azure.com:8080/)
 
