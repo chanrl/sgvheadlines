@@ -2,7 +2,7 @@
 
 Demo Flask web app served with the following: Azure VM, sqlite3, Gunicorn
 
-[Link](https://sgvheadline.westus.cloudapp.azure.com)
+[Link](http://sgvheadline.westus.cloudapp.azure.com)
 
 * Hosted on Azure VM using cron for automated daily scraping of news headlines from my local newspaper (SGV Tribune)
 * Beautifulsoup4 for web scraper
