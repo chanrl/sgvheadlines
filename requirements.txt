@@ -4,7 +4,7 @@ dash-core-components==1.8.0
 dash-html-components==1.0.2
 dash-renderer==1.2.4
 dash-table==4.6.0
-Flask==1.1.1
+Flask==2.3.2
 gensim==3.8.0
 pandas==0.25.1
 wordcloud==1.6.0
